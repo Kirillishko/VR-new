@@ -22,6 +22,22 @@ public class MaterialChanger : MonoBehaviour
         SetMaterial(Materials[_currentMaterialIndex]);
     }
 
+    public void SetNextMaterial()
+    {
+        if (++_currentMaterialIndex == Materials.Count)
+            _currentMaterialIndex = 0;
+
+        SetMaterial(Materials[_currentMaterialIndex]);
+    }
+
+    public void SetPreviousMaterial()
+    {
+        if (--_currentMaterialIndex == -1)
+            _currentMaterialIndex = Materials.Count - 1;
+
+        SetMaterial(Materials[_currentMaterialIndex]);
+    }
+
     private void SetMaterial(Material material)
     {
         //_meshRenderer.GetPropertyBlock(_materialPropertyBlock);

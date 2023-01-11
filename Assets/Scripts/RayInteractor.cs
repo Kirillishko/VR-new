@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RayInteractor : MonoBehaviour
 {
     [SerializeField] private MaterialView _materialView;
     [SerializeField] private LineRenderer _lineRenderer;    //  Удалить
 
-    private MaterialView _currentMaterialView;
+    private MaterialChanger _currentMaterialChanger;
     private bool _materialViewEnabled = false;
 
 
@@ -24,6 +25,7 @@ public class RayInteractor : MonoBehaviour
                     if (_materialViewEnabled == false)
                     {
                         _materialViewEnabled = true;
+                        _currentMaterialChanger = materialChanger;
                         _materialView.SetMaterials(materialChanger.Materials);
                         StartCoroutine(ShowMaterialView());
                     }
@@ -31,8 +33,9 @@ public class RayInteractor : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(1))
                 {
-                    _materialViewEnabled = false;
                     StartCoroutine(HideMaterialView());
+                    _materialViewEnabled = false;
+                    _currentMaterialChanger = null;
                 }
 
 
@@ -46,6 +49,14 @@ public class RayInteractor : MonoBehaviour
         {
             _lineRenderer.enabled = false;
         }
+
+        if (_currentMaterialChanger != null)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+
+            }
+        }
     }
 
     private IEnumerator ShowMaterialView()
@@ -58,6 +69,8 @@ public class RayInteractor : MonoBehaviour
             _materialView.SetMaterialsAlpha(i);
             yield return wait;
         }
+
+        _materialView.SetMaterialsAlpha(1);
     }
 
     private IEnumerator HideMaterialView()
@@ -70,6 +83,13 @@ public class RayInteractor : MonoBehaviour
             _materialView.SetMaterialsAlpha(i);
             yield return wait;
         }
+
+        _materialView.SetMaterialsAlpha(0);
+    }
+
+    private void NextMaterial()
+    {
+
     }
 
     private void OnDrawGizmos()
