@@ -12,7 +12,7 @@ public class MaterialChanger : MonoBehaviour
     private const string _roughnessMapName = "_SpecGlossMap";
     private const string _normalMapName = "_BumpMap";
 
-    private int _currentMaterialIndex = 0;
+    public int CurrentMaterialIndex = 0;
     private MaterialPropertyBlock _materialPropertyBlock;
     private MeshRenderer _meshRenderer;
 
@@ -21,34 +21,56 @@ public class MaterialChanger : MonoBehaviour
         _meshRenderer = GetComponent<MeshRenderer>();
         _materialPropertyBlock = new MaterialPropertyBlock();
 
-        SetMaterial(Materials[_currentMaterialIndex]);
+        SetMaterial(Materials[CurrentMaterialIndex]);
     }
 
-    public void SetNextMaterial()
+    private void SetNextMaterial()
     {
-        if (++_currentMaterialIndex == Materials.Count)
-            _currentMaterialIndex = 0;
+        if (++CurrentMaterialIndex == Materials.Count)
+            CurrentMaterialIndex = 0;
 
-        SetMaterial(Materials[_currentMaterialIndex]);
+        SetMaterial(Materials[CurrentMaterialIndex]);
     }
 
-    public void SetPreviousMaterial()
+    private void SetPreviousMaterial()
     {
-        if (--_currentMaterialIndex == -1)
-            _currentMaterialIndex = Materials.Count - 1;
+        if (--CurrentMaterialIndex == -1)
+            CurrentMaterialIndex = Materials.Count - 1;
 
-        SetMaterial(Materials[_currentMaterialIndex]);
+        SetMaterial(Materials[CurrentMaterialIndex]);
     }
 
-    private void SetMaterial(Material material)
+    public void SetMaterial(Material material)
     {
-        //_meshRenderer.GetPropertyBlock(_materialPropertyBlock);
+        _meshRenderer.GetPropertyBlock(_materialPropertyBlock);
 
-        //_materialPropertyBlock.
+        //_materialPropertyBlock.SetColor(_colorName, material.GetColor(_colorName));
+        //_materialPropertyBlock.SetTexture(_albedoMapName, material.GetTexture(_albedoMapName));
+        //_materialPropertyBlock.SetTexture(_roughnessMapName, material.GetTexture(_roughnessMapName));
+        //_materialPropertyBlock.SetTexture(_normalMapName, material.GetTexture(_normalMapName));
 
-        _meshRenderer.material.SetColor(_colorName, material.GetColor(_colorName));
-        _meshRenderer.material.SetTexture(_albedoMapName, material.GetTexture(_albedoMapName));
-        _meshRenderer.material.SetTexture(_roughnessMapName, material.GetTexture(_roughnessMapName));
-        _meshRenderer.material.SetTexture(_normalMapName, material.GetTexture(_normalMapName));
+        _materialPropertyBlock.Clear();
+
+        _materialPropertyBlock.SetColor(_colorName, material.GetColor(_colorName));
+        TrySetTexture(_albedoMapName, material);
+        TrySetTexture(_roughnessMapName, material);
+        TrySetTexture(_normalMapName, material);
+
+        //_meshRenderer.material = material;
+
+        //_meshRenderer.material.SetColor(_colorName, material.GetColor(_colorName));
+        //_meshRenderer.material.SetTexture(_albedoMapName, material.GetTexture(_albedoMapName));
+        //_meshRenderer.material.SetTexture(_roughnessMapName, material.GetTexture(_roughnessMapName));
+        //_meshRenderer.material.SetTexture(_normalMapName, material.GetTexture(_normalMapName));
+
+        _meshRenderer.SetPropertyBlock(_materialPropertyBlock);
+    }
+
+    private void TrySetTexture(string textureName, Material material)
+    {
+        var texture = material.GetTexture(textureName);
+
+        if (texture != null)
+            _materialPropertyBlock.SetTexture(textureName, texture);
     }
 }

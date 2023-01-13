@@ -26,7 +26,7 @@ public class RayInteractor : MonoBehaviour
                     {
                         _materialViewEnabled = true;
                         _currentMaterialChanger = materialChanger;
-                        _materialView.SetMaterials(materialChanger.Materials);
+                        _materialView.SetMaterials(materialChanger);
                         StartCoroutine(ShowMaterialView());
                     }
                 }
