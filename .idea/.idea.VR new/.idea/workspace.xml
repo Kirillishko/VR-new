@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35ac47b7-1331-4765-a64d-55b9a56086f0" name="Changes" comment="" />
+    <list default="true" id="35ac47b7-1331-4765-a64d-55b9a56086f0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VR new/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR new/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Material 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Material 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Material 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Material 2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Material 3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Material 3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Material 4.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Material 4.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Material 5.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Material 5.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Material 6.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Material 6.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MaterialChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MaterialChanger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MaterialView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MaterialView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RayInteractor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RayInteractor.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695d1cc93cca45069c528c15c9fdd7493e2800/c5/494a8b19/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2KAVh9mK2cylXLTPWrIYXLT2Y7v" />
   <component name="ProjectViewState">
@@ -20,7 +38,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -43,10 +61,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="21924">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="21924" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -63,10 +81,27 @@
       <option name="presentableId" value="Default" />
       <updated>1673417498165</updated>
       <workItem from="1673417514632" duration="13000" />
+      <workItem from="1673514727842" duration="9553000" />
     </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

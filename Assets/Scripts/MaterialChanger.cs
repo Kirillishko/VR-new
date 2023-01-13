@@ -7,8 +7,10 @@ public class MaterialChanger : MonoBehaviour
 {
     public List<Material> Materials;
 
-    private static string _colorName = "_Color";
-    private static string _albedoName = "_MainTex";
+    private const string _colorName = "_Color";
+    private const string _albedoMapName = "_MainTex";
+    private const string _roughnessMapName = "_SpecGlossMap";
+    private const string _normalMapName = "_BumpMap";
 
     private int _currentMaterialIndex = 0;
     private MaterialPropertyBlock _materialPropertyBlock;
@@ -45,6 +47,8 @@ public class MaterialChanger : MonoBehaviour
         //_materialPropertyBlock.
 
         _meshRenderer.material.SetColor(_colorName, material.GetColor(_colorName));
-        _meshRenderer.material.SetTexture(_albedoName, material.GetTexture(_albedoName));
+        _meshRenderer.material.SetTexture(_albedoMapName, material.GetTexture(_albedoMapName));
+        _meshRenderer.material.SetTexture(_roughnessMapName, material.GetTexture(_roughnessMapName));
+        _meshRenderer.material.SetTexture(_normalMapName, material.GetTexture(_normalMapName));
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class RayInteractor : MonoBehaviour
 {
     [SerializeField] private MaterialView _materialView;
-    [SerializeField] private LineRenderer _lineRenderer;    //  Удалить
+    [SerializeField] private LineRenderer _lineRenderer;    //  пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
     private MaterialChanger _currentMaterialChanger;
     private bool _materialViewEnabled = false;
@@ -55,6 +55,10 @@ public class RayInteractor : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {
 
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                StartCoroutine(_materialView.MoveToRight());
             }
         }
     }

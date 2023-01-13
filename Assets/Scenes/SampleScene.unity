@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 24a7193cbea957c43af23b6ca35da794, type: 2}
+  m_Material: {fileID: 2100000, guid: f5dd2d4ca200b6649922588839460030, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -908,15 +908,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0.582752, b: 0, a: 1}
+  m_Material: {fileID: 2100000, guid: ed71214821c3e8145bcb5cf8a1bd5d0d, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1302,8 +1302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 182f7846f0ffe454eb70bd7dce78da9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _leftImage: {fileID: 0}
-  _rightImage: {fileID: 0}
   _materialView: {fileID: 1266328350}
   _lineRenderer: {fileID: 834742970}
 --- !u!1 &1266328349
@@ -1339,6 +1337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _leftImage: {fileID: 524800017}
+  _centerImage: {fileID: 204211422}
   _rightImage: {fileID: 1938271191}
   _helpImage: {fileID: 2080770026}
   _images:
@@ -1767,6 +1766,123 @@ Transform:
   - {fileID: 1266328354}
   m_Father: {fileID: 1014607967}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1672712180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1672712185}
+  - component: {fileID: 1672712184}
+  - component: {fileID: 1672712183}
+  - component: {fileID: 1672712182}
+  - component: {fileID: 1672712181}
+  m_Layer: 0
+  m_Name: Wal (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1672712181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672712180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb90f809746ba944a684e36219d2728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Materials:
+  - {fileID: 2100000, guid: ba62d26410a729e408b509b27598078e, type: 2}
+  - {fileID: 2100000, guid: 24a7193cbea957c43af23b6ca35da794, type: 2}
+  - {fileID: 2100000, guid: 34b49fb94c162a140921774d0257688a, type: 2}
+  - {fileID: 2100000, guid: 944a2362afa5dcb49ba257c3df934a8d, type: 2}
+  - {fileID: 2100000, guid: 6f7890a7960706f44a1a519a2686157a, type: 2}
+  - {fileID: 2100000, guid: 7cde5e2e32b0afd4c8813f80d9492e3e, type: 2}
+  - {fileID: 2100000, guid: 242f4fc2cbe78204c9fcd90b9ce4708c, type: 2}
+  - {fileID: 2100000, guid: bf43ebe5e23ec664f8a3db97f708b686, type: 2}
+--- !u!65 &1672712182
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672712180}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1672712183
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672712180}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: d0aa7512a27b9b44da5eb0d5adb1d61f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1672712184
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672712180}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1672712185
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672712180}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.94, y: 0.73, z: -109.2}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1711659847
 GameObject:
@@ -2447,7 +2563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 24a7193cbea957c43af23b6ca35da794, type: 2}
+  m_Material: {fileID: 2100000, guid: 2a6378717c739e240b744158781d1d03, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -2633,7 +2749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 24a7193cbea957c43af23b6ca35da794, type: 2}
+  m_Material: {fileID: 2100000, guid: a8b456d74a5cea1478d32409e9c6ee06, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
