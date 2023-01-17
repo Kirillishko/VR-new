@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="35ac47b7-1331-4765-a64d-55b9a56086f0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VR new/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR new/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Material 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Material 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Material 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Material 2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Material 3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Material 3.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Material 4.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Material 4.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Material 5.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Material 5.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Material 6.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Material 6.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MaterialChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MaterialChanger.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MaterialView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MaterialView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/RayInteractor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RayInteractor.cs" afterDir="false" />
@@ -20,7 +15,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/695d1cc93cca45069c528c15c9fdd7493e2800/40/96e8cfa9/020000E1.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/24/c4870726/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/7d/19d3bfb8/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/88/bfbce9d6/WaitForSecondsRealtime.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/56443b64fc1d4c7ab84d3885a73a2d5519858/f3/fd25b49d/BoxCollider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695d1cc93cca45069c528c15c9fdd7493e2800/3b/3bc19d14/Array.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695d1cc93cca45069c528c15c9fdd7493e2800/c5/494a8b19/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695d1cc93cca45069c528c15c9fdd7493e2800/f5/f9554f81/IntPtr.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FileChoice.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FileView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectToPlace.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlaceObject.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -31,17 +37,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\Unity Installs\2020.3.30f1\Editor\Unity.exe" />
@@ -61,10 +67,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="21924">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="11460">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="21924" />
+      <option name="pid" value="11460" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -82,6 +88,9 @@
       <updated>1673417498165</updated>
       <workItem from="1673417514632" duration="13000" />
       <workItem from="1673514727842" duration="9553000" />
+      <workItem from="1673792946723" duration="7447000" />
+      <workItem from="1673858952747" duration="14837000" />
+      <workItem from="1673949859650" duration="12229000" />
     </task>
     <servers />
   </component>
