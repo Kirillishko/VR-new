@@ -1,7 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 // Grip - перетаскивать поставленный объект
 // B/M1 - отмена и закрытие менюшек
@@ -14,10 +15,20 @@ using UnityEngine;
 
 public class RayInteractor : MonoBehaviour
 {
+    [Header("Actions")]
+    //[SerializeField] private InputActionReference _triggerReference;
+    //[SerializeField] private InputActionReference _stickReference;
+    //[SerializeField] private InputActionReference _primaryButtonReference;
+    //[SerializeField] private InputActionReference _secondaryButtonReference;
+
+    private InputDevice _targetDevice;
+
+    [Header("Dependencies")]
     [SerializeField] private MaterialView _materialView;
     [SerializeField] private PlaceObject _placeObject;
-    [SerializeField] private LineRenderer _lineRenderer;
+    //[SerializeField] private LineRenderer _lineRenderer;
     [SerializeField] private float _rotateSpeed;
+    [SerializeField] DeviceBasedSnapTurnProvider _snapTurn;
 
     private MaterialChanger _currentMaterialChanger;
     private ObjectToPlace _currentObjectToPlace;
@@ -25,13 +36,27 @@ public class RayInteractor : MonoBehaviour
     private bool _placeObjectVisible = false;
     private bool _isChanging = false;
 
+    private bool _primaryPressed = false;
+    private bool _secondaryPressed = false;
+
+    private void Start()
+    {
+        List<InputDevice> devices = new List<InputDevice>();
+        InputDeviceCharacteristics rightControllerCharacteristics = InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
+        InputDevices.GetDevicesWithCharacteristics(rightControllerCharacteristics, devices);
+
+        if (devices.Count > 0)
+            _targetDevice = devices[0];
+
+    }
+
     private void Update()
     {
         var ray = new Ray(transform.position, transform.forward);
 
         if (Physics.Raycast(ray, out var hit))
         {
-            if (Input.GetMouseButtonDown(0))
+            if (IsTriggerPressed())
             {
                 if (hit.transform.TryGetComponent(out MaterialChanger materialChanger))
                 {
@@ -71,7 +96,7 @@ public class RayInteractor : MonoBehaviour
                     _currentObjectToPlace.transform.position = hit.point;
             }
 
-            if (Input.GetMouseButtonDown(1))
+            if (IsSecondaryPressed())
             {
                 if (_currentObjectToPlace != null)
                 {
@@ -104,19 +129,28 @@ public class RayInteractor : MonoBehaviour
             
             var start = transform.position;
             start.y -= 0.5f;
-            
-            _lineRenderer.SetPosition(0, start);
-            _lineRenderer.SetPosition(1, hit.point);
-            _lineRenderer.enabled = true;
-            
-            Debug.Log(hit.transform.name);
+
+            //_lineRenderer.SetPosition(0, start);
+            //_lineRenderer.SetPosition(1, hit.point);
+            //_lineRenderer.enabled = true;
+
+            _targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
+            _targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue);
+            _targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue);
+            _targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 stickValue);
+            Debug.Log($"Primary : {primaryButtonValue}");
+            //Debug.Log($"Secondary : {secondaryButtonValue}");
+            //Debug.Log($"Trigger : {triggerValue}");
+            //Debug.Log($"Stick : {stickValue}");
+
+            //Debug.Log(hit.transform.name);
         }
         else
         {
-            _lineRenderer.enabled = false;
+            //_lineRenderer.enabled = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (IsPrimaryPressed())
         {
             if (_currentObjectToPlace != null)
             {
@@ -147,7 +181,7 @@ public class RayInteractor : MonoBehaviour
                     _placeObject.IsPlacing = true;
                     StartCoroutine(_placeObject.HideSideImages());
                 }
-                else if (_placeObject.CurrentObject.transform.position != Vector3.zero)
+                else if (_placeObject.CurrentObject != null && _placeObject.CurrentObject.transform.position != Vector3.zero)
                 {
                     _placeObject.IsPlacing = false;
                     StartCoroutine(_placeObject.ShowSideImages(true));
@@ -157,51 +191,61 @@ public class RayInteractor : MonoBehaviour
 
         if (_currentObjectToPlace != null)
         {
-            if (Input.GetKey(KeyCode.Q))
+            if (IsStickToLeft())
             {
                 _currentObjectToPlace.Rotate(-_rotateSpeed);
             }
-            else if (Input.GetKey(KeyCode.E))
+            else if (IsStickToRight())
             {
                 _currentObjectToPlace.Rotate(_rotateSpeed);
             }
+
+            _snapTurn.enabled = false;
         }
-        if (_materialViewVisible && _currentMaterialChanger != null && _materialView.IsBusy == false && _isChanging == false)
+        else if (_materialViewVisible && _currentMaterialChanger != null && _materialView.IsBusy == false && _isChanging == false)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (IsStickToLeft())
             {
                 StartCoroutine(_materialView.MoveToLeft());
             }
-            else if (Input.GetKeyDown(KeyCode.E))
+            else if (IsStickToRight())
             {
                 StartCoroutine(_materialView.MoveToRight());
             }
+
+            _snapTurn.enabled = false;
         }
         else if (_placeObjectVisible && _placeObject.IsBusy == false && _isChanging == false)
         {
             if (_placeObject.IsPlacing == false)
             {
-                if (Input.GetKeyDown(KeyCode.Q))
+                if (IsStickToLeft())
                 {
                     StartCoroutine(_placeObject.MoveToLeft());
                 }
-                else if (Input.GetKeyDown(KeyCode.E))
+                else if (IsStickToRight())
                 {
                     StartCoroutine(_placeObject.MoveToRight());
                 }
+
+                _snapTurn.enabled = false;
             }
             else
             {
-                if (Input.GetKey(KeyCode.Q))
+                if (IsStickToLeft())
                 {
                     _placeObject.CurrentObject.Rotate(-_rotateSpeed);
                 }
-                else if (Input.GetKey(KeyCode.E))
+                else if (IsStickToRight())
                 {
                     _placeObject.CurrentObject.Rotate(_rotateSpeed);
                 }
+
+                _snapTurn.enabled = false;
             }
         }
+        //else
+        //    _snapTurn.enabled = true;
     }
 
     private void OnDrawGizmos()
@@ -233,5 +277,54 @@ public class RayInteractor : MonoBehaviour
         _materialViewVisible = true;
 
         _isChanging = false;
+    }
+
+    private bool IsTriggerPressed()
+    {
+        _targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float value);
+
+        return value >= 0.8f || Input.GetMouseButtonDown(0);
+    }
+
+    private bool IsPrimaryPressed()
+    {
+        _targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool value);
+
+        if (value && _primaryPressed)
+            value = false;
+        else if (value && _primaryPressed == false)
+            _primaryPressed = true;
+        else if (value == false && _primaryPressed)
+            _primaryPressed = false;
+
+        return value || Input.GetKeyDown(KeyCode.Space);
+    }
+
+    private bool IsSecondaryPressed()
+    {
+        _targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool value);
+
+        if (value && _secondaryPressed)
+            value = false;
+        else if (value && _secondaryPressed == false)
+            _secondaryPressed = true;
+        else if (value == false && _secondaryPressed)
+            _secondaryPressed = false;
+
+        return value || Input.GetMouseButtonDown(1);
+    }
+
+    private bool IsStickToLeft()
+    {
+        _targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 value);
+
+        return value.x >= 0.8f || Input.GetKeyDown(KeyCode.Q);
+    }
+
+    private bool IsStickToRight()
+    {
+        _targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 value);
+
+        return value.x <= -0.8f || Input.GetKeyDown(KeyCode.E);
     }
 }
