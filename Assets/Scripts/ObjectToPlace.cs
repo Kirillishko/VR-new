@@ -8,7 +8,7 @@ public class ObjectToPlace : MonoBehaviour
     public bool IsGrabbing = false;
     
     [SerializeField] private Material _material;
-    [SerializeField] private Axis _axis;
+    [SerializeField] private AxisRotate _axisRotate;
 
     private Vector3 _previousPosition;
     private Quaternion _previousRotation;
@@ -42,19 +42,19 @@ public class ObjectToPlace : MonoBehaviour
     {
         speed *= Time.deltaTime;
 
-        switch (_axis)
+        switch (_axisRotate)
         {
-            case Axis.X:
+            case AxisRotate.X:
                 {
                     transform.Rotate(speed, 0f, 0f);
                     break;
                 }
-            case Axis.Y:
+            case AxisRotate.Y:
                 {
                     transform.Rotate(0f, speed, 0f);
                     break;
                 }
-            case Axis.Z:
+            case AxisRotate.Z:
                 {
                     transform.Rotate(0f, 0f, speed);
                     break;
@@ -63,7 +63,7 @@ public class ObjectToPlace : MonoBehaviour
     }
 }
 
-public enum Axis
+public enum AxisRotate
 {
     X,
     Y,

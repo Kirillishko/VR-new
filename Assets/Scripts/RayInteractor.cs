@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
-using UnityEngine.XR.Interaction.Toolkit;
 
 // Grip - перетаскивать поставленный объект
 // B/M1 - отмена и закрытие менюшек
@@ -28,7 +27,6 @@ public class RayInteractor : MonoBehaviour
     [SerializeField] private PlaceObject _placeObject;
     //[SerializeField] private LineRenderer _lineRenderer;
     [SerializeField] private float _rotateSpeed;
-    [SerializeField] DeviceBasedSnapTurnProvider _snapTurn;
 
     private MaterialChanger _currentMaterialChanger;
     private ObjectToPlace _currentObjectToPlace;
@@ -96,6 +94,12 @@ public class RayInteractor : MonoBehaviour
                     _currentObjectToPlace.transform.position = hit.point;
             }
 
+            if (hit.transform.TryGetComponent(out Door door))
+            {
+                if (IsGripPressed())
+                    StartCoroutine(door.Interact());
+            }
+
             if (IsSecondaryPressed())
             {
                 if (_currentObjectToPlace != null)
@@ -125,8 +129,6 @@ public class RayInteractor : MonoBehaviour
                 }
             }
             
-            
-            
             var start = transform.position;
             start.y -= 0.5f;
 
@@ -138,7 +140,7 @@ public class RayInteractor : MonoBehaviour
             _targetDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue);
             _targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue);
             _targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 stickValue);
-            Debug.Log($"Primary : {primaryButtonValue}");
+            //Debug.Log($"Primary : {primaryButtonValue}");
             //Debug.Log($"Secondary : {secondaryButtonValue}");
             //Debug.Log($"Trigger : {triggerValue}");
             //Debug.Log($"Stick : {stickValue}");
@@ -199,8 +201,6 @@ public class RayInteractor : MonoBehaviour
             {
                 _currentObjectToPlace.Rotate(_rotateSpeed);
             }
-
-            _snapTurn.enabled = false;
         }
         else if (_materialViewVisible && _currentMaterialChanger != null && _materialView.IsBusy == false && _isChanging == false)
         {
@@ -212,8 +212,6 @@ public class RayInteractor : MonoBehaviour
             {
                 StartCoroutine(_materialView.MoveToRight());
             }
-
-            _snapTurn.enabled = false;
         }
         else if (_placeObjectVisible && _placeObject.IsBusy == false && _isChanging == false)
         {
@@ -227,8 +225,6 @@ public class RayInteractor : MonoBehaviour
                 {
                     StartCoroutine(_placeObject.MoveToRight());
                 }
-
-                _snapTurn.enabled = false;
             }
             else
             {
@@ -240,12 +236,8 @@ public class RayInteractor : MonoBehaviour
                 {
                     _placeObject.CurrentObject.Rotate(_rotateSpeed);
                 }
-
-                _snapTurn.enabled = false;
             }
         }
-        //else
-        //    _snapTurn.enabled = true;
     }
 
     private void OnDrawGizmos()
@@ -318,13 +310,20 @@ public class RayInteractor : MonoBehaviour
     {
         _targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 value);
 
-        return value.x >= 0.8f || Input.GetKeyDown(KeyCode.Q);
+        return value.x >= 0.8f || Input.GetKey(KeyCode.Q);
     }
 
     private bool IsStickToRight()
     {
         _targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 value);
 
-        return value.x <= -0.8f || Input.GetKeyDown(KeyCode.E);
+        return value.x <= -0.8f || Input.GetKey(KeyCode.E);
+    }
+
+    private bool IsGripPressed()
+    {
+        _targetDevice.TryGetFeatureValue(CommonUsages.grip, out float value);
+
+        return value >= 0.8f || Input.GetKeyDown(KeyCode.LeftShift);
     }
 }

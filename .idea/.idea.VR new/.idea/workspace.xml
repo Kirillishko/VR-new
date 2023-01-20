@@ -3,11 +3,47 @@
   <component name="ChangeListManager">
     <list default="true" id="35ac47b7-1331-4765-a64d-55b9a56086f0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VR new/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR new/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/New Material.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/New Material.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/RockWall.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/RockWall.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/StoneWall.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/StoneWall.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/rock_wall_04_2k.blend.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/rock_wall_04_2k.blend/textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/rock_wall_04_2k.blend/textures/rock_wall_04_diff_2k.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/rock_wall_04_2k.blend/textures/rock_wall_04_diff_2k.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/rock_wall_04_2k.blend/textures/rock_wall_04_disp_2k.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/rock_wall_04_2k.blend/textures/rock_wall_04_disp_2k.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/rock_wall_04_2k.blend/textures/rock_wall_04_nor_gl_2k.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/rock_wall_04_2k.blend/textures/rock_wall_04_nor_gl_2k.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/rock_wall_04_2k.blend/textures/rock_wall_04_rough_2k.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/rock_wall_04_2k.blend/textures/rock_wall_04_rough_2k.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/stone_wall_2k.blend.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/stone_wall_2k.blend/textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/stone_wall_2k.blend/textures/stone_wall_diff_2k.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/stone_wall_2k.blend/textures/stone_wall_diff_2k.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/stone_wall_2k.blend/textures/stone_wall_disp_2k.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/stone_wall_2k.blend/textures/stone_wall_disp_2k.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/stone_wall_2k.blend/textures/stone_wall_nor_gl_2k.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/stone_wall_2k.blend/textures/stone_wall_nor_gl_2k.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/stone_wall_2k.blend/textures/stone_wall_rough_2k.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/stone_wall_2k.blend/textures/stone_wall_rough_2k.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FloorLamp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FloorLamp.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fridgerator.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Fridgerator.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Layout.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Layout.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FileChoice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FileChoice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FileView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FileView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MaterialChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MaterialChanger.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MaterialView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MaterialView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectToPlace.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectToPlace.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/RayInteractor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RayInteractor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +52,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/695d1cc93cca45069c528c15c9fdd7493e2800/40/96e8cfa9/020000E1.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/00/6a76abf1/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/24/c4870726/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/7d/19d3bfb8/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/88/bfbce9d6/WaitForSecondsRealtime.cs" root0="SKIP_HIGHLIGHTING" />
@@ -25,8 +62,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695d1cc93cca45069c528c15c9fdd7493e2800/f5/f9554f81/IntPtr.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FileChoice.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FileView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InstantiateObjects.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectToPlace.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlaceObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Transfer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -67,10 +106,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="11460">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="33276">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="11460" />
+      <option name="pid" value="33276" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -91,6 +130,7 @@
       <workItem from="1673792946723" duration="7447000" />
       <workItem from="1673858952747" duration="14837000" />
       <workItem from="1673949859650" duration="12229000" />
+      <workItem from="1674157266274" duration="15626000" />
     </task>
     <servers />
   </component>

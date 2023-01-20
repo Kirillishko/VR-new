@@ -17,15 +17,20 @@ public class MaterialView : MonoBehaviour
     
     private const string _colorName = "_Color";
     private const string _albedoMapName = "_MainTex";
+    private const string _metallicMapName = "_MetallicGlossMap";
     private const string _roughnessMapName = "_SpecGlossMap";
     private const string _normalMapName = "_BumpMap";
+    private const string _heightMapName = "_ParallaxMap";
+    private const string _occlusionMapName = "_OcclusionMap";
 
     private MaterialChanger _currentMaterialChanger;
     private List<Material> _materials;
     private int _currentMaterialIndex = 1;
+    private MaterialPropertyBlock _materialPropertyBlock;
 
     private void Start()
     {
+        _materialPropertyBlock = new MaterialPropertyBlock();
         SetMaterialsAlpha(0);
     }
 
@@ -40,9 +45,30 @@ public class MaterialView : MonoBehaviour
         SetMaterial(_rightImage, 1);
     }
 
-    private void SetMaterial(MeshRenderer meshRenderer, Material newMaterial)
+    private void SetMaterial(MeshRenderer meshRenderer, Material material)
     {
-        meshRenderer.material = newMaterial;
+        //meshRenderer.material = newMaterial;
+        
+        meshRenderer.GetPropertyBlock(_materialPropertyBlock);
+        
+        _materialPropertyBlock.Clear();
+        _materialPropertyBlock.SetColor(_colorName, material.GetColor(_colorName));
+        TrySetTexture(_albedoMapName, material);
+        TrySetTexture(_metallicMapName, material);
+        TrySetTexture(_roughnessMapName, material);
+        TrySetTexture(_normalMapName, material);
+        TrySetTexture(_heightMapName, material);
+        TrySetTexture(_occlusionMapName, material);
+
+        meshRenderer.SetPropertyBlock(_materialPropertyBlock);
+    }
+    
+    private void TrySetTexture(string textureName, Material material)
+    {
+        var texture = material.GetTexture(textureName);
+
+        if (texture != null)
+            _materialPropertyBlock.SetTexture(textureName, texture);
     }
 
     private void SetMaterial(MeshRenderer meshRenderer, int offset)
@@ -77,9 +103,13 @@ public class MaterialView : MonoBehaviour
 
     private void SetMaterialAlpha(MeshRenderer meshRenderer, float alpha)
     {
-        var color = meshRenderer.material.color;
+        meshRenderer.GetPropertyBlock(_materialPropertyBlock);
+        
+        var color = _materialPropertyBlock.GetColor(_colorName);
         color.a = alpha;
-        meshRenderer.material.SetColor(_colorName, color);
+        _materialPropertyBlock.SetColor(_colorName, color);
+
+        meshRenderer.SetPropertyBlock(_materialPropertyBlock);
     }
 
     public IEnumerator MoveToLeft()

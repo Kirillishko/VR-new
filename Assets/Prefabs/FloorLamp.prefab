@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsGrabbing: 0
   _material: {fileID: 2100000, guid: 3f74f53f6356975468236f855aaf8fe7, type: 2}
-  _axis: 2
+  _axisRotate: 2
 --- !u!65 &36136349267847169
 BoxCollider:
   m_ObjectHideFlags: 0
