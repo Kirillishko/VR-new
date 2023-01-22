@@ -110,8 +110,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Materials:
-  - {fileID: 2100000, guid: 05cf54967d7793043abb07b7ee7a5a34, type: 2}
-  - {fileID: 2100000, guid: 21fc1656cb969ed49b4ff37f0840b28d, type: 2}
+  - {fileID: 2100000, guid: 05e26326f22a7b448a162e79a8919284, type: 2}
+  - {fileID: 2100000, guid: a2d1a519d4e3ada44850e45eee02903a, type: 2}
+  - {fileID: 2100000, guid: 08b0a4967a910174c9fdc4b1db15e161, type: 2}
+  ToDelete: 0
   CurrentMaterialIndex: 0
   _xScaleMult: 1
   _yScaleMult: 1

@@ -22,32 +22,14 @@ public class Door : MonoBehaviour
         _startPosition = transform.position;
         _endPosition = _startPosition;
     
-        _endPosition.x += transform.localScale.z / 2;
-        _endPosition.z += transform.localScale.x * 1.5f;
-
+        _endPosition.x += transform.localScale.z / 2 - transform.localScale.x / 2;
+        _endPosition.z += transform.localScale.x / 2 - transform.localScale.z / 2;
         
         _startRotation = transform.rotation;
-        // var temp = new Vector3(_startRotation.x, _startRotation.y + 90f, _startRotation.z);
         _endRotation = Quaternion.Euler(
             _startRotation.eulerAngles.x,
-            _startRotation.eulerAngles.y + 90f,
+            _startRotation.eulerAngles.y - 90f,
             _startRotation.eulerAngles.z);
-        // .eulerAngles.Set(
-        // _startRotation.x,
-        // _startRotation.y + 90f,
-        // _startRotation.z);
-        // = Quaternion.Euler(
-        // _startRotation.x,
-        // _startRotation.y + 90f,
-        // _startRotation.z);
-        
-        // _endPosition = _startPosition;
-        //
-        // _endPosition.x += transform.localScale.x;
-        // anchor = _startPosition;
-        // anchor.x += transform.localScale.z;
-        //
-        // axis = Vector3.Cross(Vector3.forward, Vector3.left);
     }
 
     public IEnumerator Interact()
@@ -72,13 +54,6 @@ public class Door : MonoBehaviour
                 
                 yield return null;
             }
-            
-            // for (int i = 0; i < 90; i++)
-            // {
-            //     transform.RotateAround(anchor, axis, 1);
-            //
-            //     yield return null;
-            // }
 
             position = _endPosition;
             rotation = _endRotation;
@@ -96,13 +71,6 @@ public class Door : MonoBehaviour
             
                 yield return null;
             }
-
-            // for (int i = 0; i < 90; i++)
-            // {
-            //     transform.RotateAround(anchor, axis, 1);
-            //
-            //     yield return null;
-            // }
             
             position = _startPosition;
             rotation = _startRotation;

@@ -6,6 +6,7 @@ using UnityEngine;
 public class MaterialChanger : MonoBehaviour
 {
     public List<Material> Materials;
+    public bool ToDelete;
 
     private const string _colorName = "_Color";
     private const string _albedoMapName = "_MainTex";
@@ -33,6 +34,26 @@ public class MaterialChanger : MonoBehaviour
         // _meshRenderer.material.mainTextureScale = textureScale;
         
         SetMaterial(Materials[CurrentMaterialIndex]);
+        
+        var textureScale = Vector2.one;
+
+        if (_axisExpand == AxisExpand.Horizontal)
+        {
+            textureScale.x = transform.localScale.x * _xScaleMult;
+            textureScale.y = transform.localScale.z * _yScaleMult;
+        }
+        else if (_axisExpand == AxisExpand.Vertical)
+        {
+            //textureScale.x = transform.localScale.x * _xScaleMult;
+            //textureScale.y = transform.localScale.y * _yScaleMult;
+            //textureScale.y = transform.localScale.y * _yScaleMult;
+            //textureScale.y = transform.localScale.y * _yScaleMult;
+        }
+
+        _meshRenderer.material.mainTextureScale = textureScale;
+        
+        if (ToDelete)
+            Destroy(this);
     }
 
     private void Update()

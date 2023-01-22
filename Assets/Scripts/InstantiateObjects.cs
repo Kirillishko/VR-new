@@ -15,7 +15,7 @@ public class InstantiateObjects : MonoBehaviour
 
     private string[] _map;
     private string _path;
-    private string _fileName = "Layer1";
+    private string _fileName = "Layer3";
 
     private const string Door = "Door";
     private const string Window = "Window";
@@ -27,7 +27,8 @@ public class InstantiateObjects : MonoBehaviour
 
     void Start()
     {
-        _path = Transfer.Path;
+        //_path = Transfer.Path;
+        _path = Application.dataPath + "/StreamingAssets/" + _fileName + ".txt";
         _map = File.ReadAllLines(_path);
         Debug.Log(_path);
 
@@ -220,7 +221,7 @@ public class InstantiateObjects : MonoBehaviour
         DoorOpeningUp.localScale = newScale;
         DoorOpeningUp.SetPositionAndRotation(newPosition, Quaternion.Euler(new Vector3(0, angleDoor, 0)));
         
-        var DoorOpeningDown = Instantiate(CubeForDoorOpening, transform).transform;
+        var DoorOpeningDown = Instantiate(CubeForFloor, transform).transform;
         
         newPosition = new Vector3(xDoor, heightFloor / 2, zDoor);
 
@@ -249,15 +250,42 @@ public class InstantiateObjects : MonoBehaviour
     {
         var cube = Instantiate(CubeForWall, transform).transform;
 
-        var newPosition = new Vector3(xWall, (heightFloor + heightWall) - (heightWall / 2), zWall);
+        var newPosition = Vector3.zero;
+        if (angleWall == 90)
+        {
+            newPosition = new Vector3(xWall , (heightFloor + heightWall) - (heightWall / 2), zWall- (widthWall / 4));
+        }
+        else
+        {
+            newPosition = new Vector3(xWall - (widthWall / 4), (heightFloor + heightWall) - (heightWall / 2), zWall);
+        }
 
         var newScale = Vector3.one;
-        newScale.x *= widthWall;
+        newScale.x = (newScale.x * widthWall) / 2;
         newScale.y *= heightWall;
         newScale.z *= lengthWall;
 
         cube.localScale = newScale;
         cube.SetPositionAndRotation(newPosition, Quaternion.Euler(new Vector3(0, angleWall, 0)));
+        
+        var cubeRight = Instantiate(CubeForWall, transform).transform;
+        
+        if (angleWall == 90)
+        {
+            newPosition = new Vector3(xWall, (heightFloor + heightWall) - (heightWall / 2), zWall  + (widthWall / 4));
+        }
+        else
+        {
+            newPosition = new Vector3(xWall + (widthWall / 4), (heightFloor + heightWall) - (heightWall / 2), zWall);
+        }
+
+        newScale = Vector3.one;
+        newScale.x = (newScale.x * widthWall) / 2;
+        newScale.y *= heightWall;
+        newScale.z *= lengthWall;
+
+        cubeRight.localScale = newScale;
+        cubeRight.SetPositionAndRotation(newPosition, Quaternion.Euler(new Vector3(0, angleWall, 0)));
     }
 
     private void CreateOpening(float widthWall, float heightWall, float heightFloor, float heightDoor, float xOpening, float zOpening, int angleOpening, float lengthOpening)
@@ -363,9 +391,9 @@ public class InstantiateObjects : MonoBehaviour
         
         newPosition = new Vector3(xFloor, 2.55f, zFloor);
          
-        newScale.x = widthFloor * 1.3f;
+        newScale.x = widthFloor;
         newScale.y *= heightFloor;
-        newScale.z = lengthFloor * 1.3f;
+        newScale.z = lengthFloor;
 
         ceiling.localScale = newScale;
         ceiling.SetPositionAndRotation(newPosition, Quaternion.Euler(new Vector3(0, 0, 0)));
