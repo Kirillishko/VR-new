@@ -27,8 +27,8 @@ public class InstantiateObjects : MonoBehaviour
 
     void Start()
     {
-        //_path = Transfer.Path;
-        _path = Application.dataPath + "/StreamingAssets/" + _fileName + ".txt";
+        _path = Transfer.Path;
+        //_path = Application.dataPath + "/StreamingAssets/" + _fileName + ".txt";
         _map = File.ReadAllLines(_path);
         Debug.Log(_path);
 

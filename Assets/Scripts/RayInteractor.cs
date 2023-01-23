@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.SceneManagement;
 
 // Grip - перетаскивать поставленный объект
 // B/M1 - отмена и закрытие менюшек
@@ -50,6 +51,9 @@ public class RayInteractor : MonoBehaviour
 
     private void Update()
     {
+        if (IsGripPressed() && IsTriggerPressed() && IsPrimaryPressed())
+            SceneManager.LoadScene(0);
+
         var ray = new Ray(transform.position, transform.forward);
 
         if (Physics.Raycast(ray, out var hit))
